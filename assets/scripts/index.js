@@ -15,6 +15,18 @@ const mouse = {
   width: 0.1,
 };
 
+let canvasPosition = canvas.getBoundingClientRect();
+// console.log(canvasPosition)
+canvas.addEventListener("mousemove", function (event) {
+  mouse.x = event.x - canvasPosition.left;
+  mouse.y = event.y - canvasPosition.top;
+});
+
+canvas.addEventListener("mouseleave", function () {
+  mouse.y = undefined;
+  mouse.x = undefined;
+});
+
 // Gameboard
 const controlsBar = {
   width: canvas.width,
@@ -47,3 +59,16 @@ function animate() {
   requestAnimationFrame(animate); //recursão
 }
 animate();
+
+function collision(first, second) {
+  if (
+    !(
+      first.x > second.x + second.width ||
+      first.x + first.width < second.x ||
+      first.y > second.y + second.height ||
+      first.y + first.height < second.y
+    )
+  ) {
+    return true;
+  }
+}
