@@ -7,6 +7,8 @@ canvas.height = 600;
 const cellSize = 100;
 const cellGap = 3;
 const gameGrid = [];
+const towers = [];
+let money = 300;
 
 // mouse
 const mouse = {
@@ -28,6 +30,17 @@ canvas.addEventListener("mouseleave", function () {
   mouse.y = undefined;
 });
 
+canvas.addEventListener("click", function () {
+  const gridPositionX = mouse.x - (mouse.x % cellSize);
+  const gridPositionY = mouse.y - (mouse.y % cellSize);
+  if (gridPositionX < cellSize) return;
+  let towerCost = 100;
+  if (money > towerCost) {
+    towers.push(new Tower(gridPositionX, gridPositionY));
+    money -= towerCost;
+  }
+});
+
 // Gameboard
 const controlsBar = {
   width: canvas.width,
@@ -35,6 +48,7 @@ const controlsBar = {
 };
 // Projeteis
 // Torres
+
 // Monstros
 // Funções e Utilidades
 
@@ -53,11 +67,18 @@ function handleGameGrid() {
   }
 }
 
+function hadleTower() {
+  for (let i = 0; i < towers.length; i++) {
+    towers[i].draw();
+  }
+}
+
 function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "blue";
   ctx.fillRect(0, 0, controlsBar.width, controlsBar.height);
   handleGameGrid();
+  hadleTower();
   requestAnimationFrame(animate); //recursão
 }
 animate();
