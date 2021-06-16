@@ -4,7 +4,6 @@ body {
 
 /* Não consegui utilizar flexbox com o canvas aqui */
 #canvas1 {
-  display: flex;
   position: absolute;
   top: 50%;
   left: 50%;

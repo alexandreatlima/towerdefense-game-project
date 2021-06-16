@@ -1,12 +1,14 @@
 class Cell {
-  constructor(xPosition, yPosition) {
-    this.xPosition = xPosition;
-    this.yPosition = yPosition;
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
     this.width = cellSize;
     this.height = cellSize;
   }
   draw() {
-    ctx.strokeStyle = "black";
-    ctx.strokeRect(this.xPosition, this.yPosition, this.width, this.height);
+    if (mouse.x && mouse.y && collision(this, mouse)) {
+      ctx.strokeStyle = "black";
+      ctx.strokeRect(this.x, this.y, this.width, this.height);
+    }
   }
 }

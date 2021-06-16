@@ -10,21 +10,22 @@ const gameGrid = [];
 
 // mouse
 const mouse = {
-  x: undefined,
-  y: undefined,
+  x: 10,
+  y: 10,
   width: 0.1,
+  height: 0.1,
 };
 
 let canvasPosition = canvas.getBoundingClientRect();
-// console.log(canvasPosition)
-canvas.addEventListener("mousemove", function (event) {
-  mouse.x = event.x - canvasPosition.left;
-  mouse.y = event.y - canvasPosition.top;
+
+canvas.addEventListener("mousemove", function (e) {
+  mouse.x = e.x - canvasPosition.left;
+  mouse.y = e.y - canvasPosition.top;
 });
 
 canvas.addEventListener("mouseleave", function () {
-  mouse.y = undefined;
   mouse.x = undefined;
+  mouse.y = undefined;
 });
 
 // Gameboard
@@ -38,9 +39,9 @@ const controlsBar = {
 // Funções e Utilidades
 
 function createGrid() {
-  for (let yCoord = cellSize; yCoord < canvas.height; yCoord += cellSize) {
-    for (let xCoord = 0; xCoord < canvas.width; xCoord += cellSize) {
-      gameGrid.push(new Cell(xCoord, yCoord));
+  for (let y = cellSize; y < canvas.height; y += cellSize) {
+    for (let x = 0; x < canvas.width; x += cellSize) {
+      gameGrid.push(new Cell(x, y));
     }
   }
 }
@@ -53,6 +54,7 @@ function handleGameGrid() {
 }
 
 function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "blue";
   ctx.fillRect(0, 0, controlsBar.width, controlsBar.height);
   handleGameGrid();
