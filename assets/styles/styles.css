@@ -3,6 +3,7 @@ body {
 }
 
 /* Não consegui utilizar flexbox com o canvas aqui */
+/* Ajustando canvas (cor, tamanho, centralização) */
 #canvas1 {
   position: absolute;
   top: 50%;
