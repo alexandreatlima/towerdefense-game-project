@@ -15,8 +15,8 @@ I'm a programming beginner and tech addict.
 
 ## Play now!
 
-You can play on [this link](https://alexandreatlima.github.io/towerdefense-game-project/)
+You can play on [this link](https://alexandreatlima.github.io/towerdefense-game-project/).
 
 ## Find out more about this project
 
-More about this project (in Portuguese) [here](https://docs.google.com/presentation/d/1B0LRaJLhnxeV-P0T67CF_KAYEpTwPdCPCPLR4QhF93E/edit?usp=sharing)
+More about this project (in Portuguese) [here](https://docs.google.com/presentation/d/1B0LRaJLhnxeV-P0T67CF_KAYEpTwPdCPCPLR4QhF93E/edit?usp=sharing).
