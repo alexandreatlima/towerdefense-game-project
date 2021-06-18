@@ -11,7 +11,7 @@ Basically, it's a blue squares fight against the bads red squere!
 
 ## About dev.
 
-I'm a programming beginner and tech addict
+I'm a programming beginner and tech addict.
 
 ## Play now!
 
